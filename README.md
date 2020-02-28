@@ -35,7 +35,12 @@ Next, you can tag the image accordingly:
 docker tag IMAGE_NAME registry.COLUMBUS_URL/USERNAME/IMAGE_NAME:latest
 ```
 
+Login into the registry
+```
+docker login https://registry.COLUMBUS_URL -u REGISTRY_USER -p REGISTRY_PASSWORD
+```
+
 Then push the image to the image registry:
 ```
-docker push -u REGISTRY_USERNAME -p REGISTRY_PASSWORD registry.COLUMBUS_URL/USERNAME/IMAGE_NAME:latest
+docker push registry.COLUMBUS_URL/USERNAME/IMAGE_NAME:latest
 ```
