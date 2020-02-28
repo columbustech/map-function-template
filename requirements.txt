@@ -1,0 +1,1 @@
+-e ./pip_packages/local_package
