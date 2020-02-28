@@ -12,13 +12,11 @@ gen\_container.py takes in 5 arguments:
 1. -n, --name :  Name of the output folder. Defaults to mapfn-foo
 2. -f, --profiler : Path to a python file containing a 'process' function. The function will take a URL as input and 
 return a pandas dataframe. A sample file, process.py has been provided in this repo. This file uses a local module and
-a local pip package.
+a local pip package, but these are optional.
 3. -r, --requirements : A requirements.txt file specifying pip packages. To specify a local package, preface with -e.
 A sample requirements.txt has been provided in this repo.
-4. -m, --modules : Path to folder containing some python files. This folder will be copied to the same location as the
-file containing 'process' function, so the 'process' function can refer to functions defined within this folder.
-5. -l, --local : Path to a folder containing pip packages to be installed locally. An example pip\_packages folder has
-been provided in the repo. The folder contains one package named local\_package.
+4. -m, --modules : \[OPTIONAL\] Path to folder containing some python files. This folder will be copied to the same location as the file containing 'process' function, so the 'process' function can refer to functions defined within this folder.
+5. -l, --local : \[OPTIONAL\] Path to a folder containing pip packages to be installed locally. An example pip\_packages folder has been provided in the repo. The folder contains one package named local\_package.
 
 Sample usage:
 ```
