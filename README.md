@@ -31,7 +31,7 @@ docker build -t IMAGE_NAME .
 ```
 
 Assume that Columbus is running at COLUMBUS\_URL. A private image registry will be hosted at 
-https://registry.COLUMBUS\_URL by the Kubernetes cluster.
+https://registry.COLUMBUS_URL by the Kubernetes cluster.
 Next, you can tag the image accordingly:
 ```
 docker tag IMAGE_NAME registry.COLUMBUS_URL/USERNAME/IMAGE_NAME:latest
