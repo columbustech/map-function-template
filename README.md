@@ -23,24 +23,22 @@ Sample usage:
 python gen_container.py -n map1 -f process.py -r requirements.txt -m modules -l pip_packages
 ```
 
-This will create a folder named map1 (or whatever you pass to the n flag). Cd into map1 and build the image:
-```
-docker build -t IMAGE_NAME .
-```
+This will create a folder named map1 (or whatever you pass to the n flag). Cd into map1.
 
 Assume that Columbus is running at COLUMBUS\_URL. A private image registry will be hosted at 
-https://registry.COLUMBUS_URL by the Kubernetes cluster.
-Next, you can tag the image accordingly:
-```
-docker tag IMAGE_NAME registry.COLUMBUS_URL/USERNAME/IMAGE_NAME:latest
-```
-
-Login into the registry
+https://registry.COLUMBUS_URL by the Kubernetes cluster. Login into the registry:
 ```
 docker login https://registry.COLUMBUS_URL -u REGISTRY_USER -p REGISTRY_PASSWORD
+```
+
+Build the image
+```
+docker build -t registry.COLUMBUS_URL/REGSITRY_USER/IMAGE_NAME:latest .
 ```
 
 Then push the image to the image registry:
 ```
 docker push registry.COLUMBUS_URL/USERNAME/IMAGE_NAME:latest
 ```
+
+And Done!
