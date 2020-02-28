@@ -1,4 +1,4 @@
-## How to use this repo
+## How to build and push the map function container to a private registry
 
 Clone this repo:
 ```
