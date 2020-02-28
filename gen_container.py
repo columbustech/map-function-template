@@ -17,7 +17,7 @@ if options.name is not None:
     project_name = options.name
 
 subprocess.call(["git", "clone", "https://www.github.com/columbustech/map-container-template"])
-subprocess.call(["mv", "mapfn-test", options.name])
+subprocess.call(["mv", "map-container-template", options.name])
 subprocess.call(["cp", options.profiler, os.path.join(base_path, "process.py")])
 
 if options.modules is not None:
