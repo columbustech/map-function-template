@@ -26,19 +26,24 @@ python gen_container.py -n map1 -f process.py -r requirements.txt -m modules -l 
 This will create a folder named map1 (or whatever you pass to the n flag). Cd into map1.
 
 Assume that Columbus is running at COLUMBUS\_URL. A private image registry will be hosted at 
-https://registry.COLUMBUS_URL by the Kubernetes cluster. Login into the registry:
-```
-docker login https://registry.COLUMBUS_URL -u REGISTRY_USER -p REGISTRY_PASSWORD
-```
+https://registry.COLUMBUS_URL by the Kubernetes cluster.
 
 Build the image
 ```
-docker build -t registry.COLUMBUS_URL/REGSITRY_USER/IMAGE_NAME:latest .
+docker build -t map1 .
+```
+
+Tag the image
+```
+docker tag map1 registry.COLUMBUS_URL/USERNAME/IMAGE_NAME:latest
+```
+
+Login into the registry
+```
+docker login https://registry.COLUMBUS_URL -u REGISTRY_USER -p REGISTRY_PASSWORD
 ```
 
 Then push the image to the image registry:
 ```
 docker push registry.COLUMBUS_URL/USERNAME/IMAGE_NAME:latest
 ```
-
-And Done!
