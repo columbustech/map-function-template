@@ -63,7 +63,7 @@ And Done!
 The local package, package2, in this example is built from a .tar.gz archive. To use it, here are the steps:
 
 1. Move the .tar.gz file into a pip_packages folder.
-2. Use -l flag while running gen_container.py (eg. -l pip_packages)
+2. Use -l flag while running gen_container.py pointing to pip_packages folder (eg. -l pip_packages)
 3. Add an entry to requirements.txt (Eg. ./pip_packages/package2-0.0.1.tar.gz)
 4. Import it in process.py as 'import package2'.
 
@@ -76,6 +76,6 @@ The local package, package1, in this example is built from source as a pip packa
 
 ### Using a local module
 
-1. Specify a folder containing some python files with the -m flag. (Eg. -m modules)
+1. Specify a folder containing some python files with the -m flag while running gen_container.py. (Eg. -m modules)
 2. Import it in process.py assuming the modules folder is in the same directory as process.py 
 (Eg. from .modules.local_module import test_local_module)
