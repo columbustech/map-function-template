@@ -77,4 +77,5 @@ The local package, package1, in this example is built from source as a pip packa
 ### Using a local module
 
 1. Specify a folder containing some python files with the -m flag. (Eg. -m modules)
-2. Import it in process.py assuming the modules folder is in the same directory as process.py (Eg. from .modules.local_module import test_local_module)
+2. Import it in process.py assuming the modules folder is in the same directory as process.py 
+(Eg. from .modules.local_module import test_local_module)
