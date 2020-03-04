@@ -1,4 +1,4 @@
 numpy
 scipy
-requests
--e ./pip_packages/local_package
+-e ./pip_packages/package1
+./pip_packages/package2-0.0.1.tar.gz

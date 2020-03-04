@@ -1,13 +1,16 @@
 import pandas as pd
-import local_package
-from modules.local_module import *
+import package1, package2
+from .modules.local_module import *
 
-# download_url : S3 url of a file. The file is a CSV table in our example but 
-#               could also be a zipped folder, which can be extracted below.
+# download_url : Url path to a file. The file is a CSV table in our example but could
+# also be a zipped folder, which can be extracted inside the process function.
+
 def process(download_url):
-    
-    # Test local pip package
-    local_package.test_local_package()
+    # Test local package, package1
+    package1.test_package1()
+
+    # Test local package, package2
+    package2.test_package2()
 
     # Test local module
     test_local_module()
