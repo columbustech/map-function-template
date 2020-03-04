@@ -34,7 +34,7 @@ def main():
     shutil.copy(options.profiler, os.path.join(base_path, "process.py"))
 
     if options.modules is not None:
-        shutil.copytree(options.modules, os.path.join(os.path.join(base_path, os.path.dirname(options.modules)), ""))
+        shutil.copytree(options.modules, os.path.join(base_path, os.path.dirname(os.path.join(options.modules, ""))))
 
     if options.requirements is not None:
         req = None
@@ -44,7 +44,7 @@ def main():
             f.write(req)
 
     if options.local is not None:
-        shutil.copytree(options.local, os.path.join(os.path.join(folder_name, os.path.dirname(options.local)), ""))
+        shutil.copytree(options.local, os.path.join(folder_name, os.path.dirname(os.path.join(options.local, ""))))
 
 if __name__ == "__main__":
     main()
