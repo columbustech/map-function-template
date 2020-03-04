@@ -1,6 +1,6 @@
 ## Instructions
 
-# Creating the required folder structure
+### Creating the required folder structure
 
 Clone this repo:
 ```
@@ -29,7 +29,7 @@ A sample 'process' function has been provided in the repo (defined inside proces
 two local packages. The 'process' function should take a URL as input and return a Pandas dataframe. Other than that, you
 are free to write whatever you want in the 'process' function.
 
-# Building and pushing the container image to a private registry
+### Building and pushing the container image to a private registry
 
 Cd into the folder map1 created by gen_container.py.
 
@@ -59,7 +59,7 @@ And Done!
 
 ## Additional notes:
 
-# Using a package from a .tar.gz or .wl archive
+### Using a package from a .tar.gz or .wl archive
 The local package, package2, in this example is built from a .tar.gz archive. To use it, here are the steps:
 
 1. Move the .tar.gz file into a pip_packages folder.
@@ -70,11 +70,11 @@ The local package, package2, in this example is built from a .tar.gz archive. To
 The folder containing the packages does not need to be called pip_packages, it can have any name, but the path to it needs
 to be specified in requirements.txt.
 
-# Using a package from source files
+### Using a package from source files
 The local package, package1, in this example is built from source as a pip package. The steps are same as above, except a
 -e flag needs to be added in requirements.txt. (Eg. -e pip_packages/package1)
 
-# Using a local module
+### Using a local module
 
 1. Specify a folder containing some python files with the -m flag. (Eg. -m modules)
 2. Import it in process.py assuming the modules folder is in the same directory as process.py (Eg. from .modules.local_module import test_local_module)
