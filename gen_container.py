@@ -1,15 +1,5 @@
 import argparse, os, subprocess, shutil
 
-def copy_dir(src, dst):
-    dst = os.path.join(dst, os.path.dirname(src))
-    for item in os.listdir(src):
-        s = os.path.join(src, item)
-        d = os.path.join(dst, item)
-        if os.path.isdir(s):
-            shutil.copytree(s, d)
-        else:
-            shutil.copy2(s, d) 
-
 def main():
     folder_name = "mapfn-foo"
 
@@ -40,11 +30,11 @@ def main():
         req = None
         with open(options.requirements, "r") as f:
             req = f.read()
-        with open(os.path.join(folder_name, "requirements.txt"), "a") as f:
+        with open(os.path.join(os.path.join(folder_name,"src"), "requirements.txt"), "a") as f:
             f.write(req)
 
     if options.local is not None:
-        shutil.copytree(options.local, os.path.join(folder_name, os.path.dirname(os.path.join(options.local, ""))))
+        shutil.copytree(options.local, os.path.join(os.path.join(folder_name, "src"), os.path.dirname(os.path.join(options.local, ""))))
 
 if __name__ == "__main__":
     main()
