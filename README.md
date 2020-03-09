@@ -31,10 +31,10 @@ are free to write whatever you want in the 'process' function.
 
 ### Building and pushing the container image to a private registry
 
-Cd into the folder map1 created by gen_container.py.
+Cd into the folder map1 created by gen\_container.py.
 
 Assume that Columbus is running at COLUMBUS\_URL. A private image registry will be hosted at 
-https://registry.COLUMBUS_URL by the Kubernetes cluster.
+https://registry.COLUMBUS\_URL by the Kubernetes cluster.
 
 Build the image
 ```
@@ -62,20 +62,20 @@ And Done!
 ### Using a package from a .tar.gz or .wl archive
 The local package, package2, in this example is built from a .tar.gz archive. To use it, here are the steps:
 
-1. Move the .tar.gz file into a pip_packages folder.
-2. Use -l flag while running gen_container.py pointing to pip_packages folder (eg. -l pip_packages)
-3. Add an entry to requirements.txt (Eg. ./pip_packages/package2-0.0.1.tar.gz)
+1. Move the .tar.gz file into a pip\_packages folder.
+2. Use -l flag while running gen\_container.py pointing to pip\_packages folder (eg. -l pip\_packages)
+3. Add an entry to requirements.txt (Eg. ./pip\_packages/package2-0.0.1.tar.gz)
 4. Import it in process.py as 'import package2'.
 
-The folder containing the packages does not need to be called pip_packages, it can have any name, but the path to it needs
+The folder containing the packages does not need to be called pip\_packages, it can have any name, but the path to it needs
 to be specified in requirements.txt.
 
 ### Using a package from source files
 The local package, package1, in this example is built from source as a pip package. The steps are same as above, except a
--e flag needs to be added in requirements.txt. (Eg. -e pip_packages/package1)
+-e flag needs to be added in requirements.txt. (Eg. -e pip\_packages/package1)
 
 ### Using a local module
 
-1. Specify a folder containing some python files with the -m flag while running gen_container.py. (Eg. -m modules)
+1. Specify a folder containing some python files with the -m flag while running gen\_container.py. (Eg. -m modules)
 2. Import it in process.py assuming the modules folder is in the same directory as process.py 
-(Eg. from .modules.local_module import test_local_module)
+(Eg. from .modules.local\_module import test\_local\_module)
