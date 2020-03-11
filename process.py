@@ -16,7 +16,11 @@ def process(download_url):
     test_local_module()
 
     # Read the csv table into a pandas dataframe
-    df = pd.read_csv(download_url)
+    df = None
+    try:
+        df = pd.read_csv(download_url)
+    except:
+        df = pd.read_csv(download_url, encoding = "ISO-8859-1")
 
     # Get tablename from the filename by removing .csv extension
     url_wo_sig = download_url[:download_url.find('?')]
